@@ -231,7 +231,7 @@
                     <img src="IMG_20261123_150211_100.jpg" alt="KIFY GAME SHOP Logo" class="w-full h-full object-cover">
                 </div>
                 <div>
-                    <h1 class="text-lg sm:text-xl font-extrabold tracking-wider gold-gradient-text flex items-center gap-1.5 font-display">
+                    <h1 class="text-xl font-extrabold tracking-wider gold-gradient-text flex items-center gap-1.5 font-display">
                         KIFY GAME SHOP
                     </h1>
                 </div>
@@ -480,7 +480,7 @@
             <div class="relative z-10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div class="max-w-3xl">
                     <h2 class="text-xl sm:text-2xl md:text-3xl font-extrabold leading-relaxed hero-vip-float font-display">
-                        KIFY GAME SHOP မှ ရောင်းချပေးသော အကောင့်များကို စိတ်ချယုံကြည်စွာ ဝယ်ယူနိုင်ပါသည်
+                        KIFY GAME SHOP မှ ရောင်းချပေးသောအကောင့်များကို စိတ်ချယုံကြည်စွာ ဝယ်ယူနိုင်ပါသည်
                     </h2>
                 </div>
                 <button type="button" onclick="showEntryGateway()"
@@ -978,13 +978,12 @@
         } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
 
         const firebaseConfig = {
-            apiKey: "AIzaSyBDvoew3JPuy4WTdG_S0jyP_QkNLALwCTQ",
-            authDomain: "rina-shop.firebaseapp.com",
-            projectId: "rina-shop",
-            storageBucket: "rina-shop.firebasestorage.app",
-            messagingSenderId: "929032194384",
-            appId: "1:929032194384:web:5576a53e8105d4d7d44455",
-            measurementId: "G-LMJQR3BCEW"
+            apiKey: "AIzaSyAnBYPz6lQqbizaU1p2nG9bxQff_eEMm0I",
+            authDomain: "rina-game-shop.firebaseapp.com",
+            projectId: "kify-game-shop",
+            storageBucket: "rina-game-shop.appspot.com",
+            messagingSenderId: "000000000000",
+            appId: "1:000000000000:web:rina-game-shop"
         };
 
         const app = initializeApp(firebaseConfig);
@@ -993,7 +992,7 @@
         const accountsCol = collection(db, "mlbb_accounts");
         const visitsCol = collection(db, "visit_logs");
 
-        const ADMIN_ACCESS_KEY = "kify2026";
+        const ADMIN_ACCESS_KEY = "rina2026";
         let visitorLogs = [];
         let visitorUnsubscribe = null;
 
@@ -1019,7 +1018,7 @@
         async function recordPageVisit() {
             try {
                 if (hasSecretAdminAccess()) return;
-                const sessionKey = "kify_visit_recorded_v1";
+                const sessionKey = "rina_visit_recorded_v1";
                 if (sessionStorage.getItem(sessionKey)) return;
                 sessionStorage.setItem(sessionKey, "1");
 
@@ -1426,7 +1425,7 @@
                 const labelText = item.label || 'Bundle';
                 const priceVal = Number(item.price || 0);
                 const formatted = priceVal.toLocaleString();
-                const tgMsg = encodeURIComponent(`မင်္ဂလာပါ KIFY GAME SHOP၊ MLBB ${labelText} (ဈေးနှုန်း: ${formatted} Ks) ဝယ်ချင်လို့ပါ။`);
+                const tgMsg = encodeURIComponent(` MLBB ${labelText} (ဈေးနှုန်း: ${formatted} Ks) ဝယ်ချင်လို့ပါ။`);
                 return `
                     <a href="https://t.me/KIFYCASS?text=${tgMsg}" target="_blank" rel="noopener noreferrer"
                         class="group rounded-2xl bg-darkcard border border-amber-500/40 hover:border-amber-400 p-4 flex items-center gap-3 shadow-lg transition-all">
@@ -1445,7 +1444,7 @@
                 const amtText = pkg.amount || 'Dia';
                 const priceVal = Number(pkg.price || 0);
                 const formatted = priceVal.toLocaleString();
-                const tgMsg = encodeURIComponent(`မင်္ဂလာပါ KIFY GAME SHOP၊ MLBB ${amtText} Diamonds (ဈေးနှုန်း: ${formatted} Ks) ဝယ်ယူလိုပါသည်။`);
+                const tgMsg = encodeURIComponent(`မင်္ဂလာပါ @KIFYCASS၊ MLBB ${amtText} Diamonds (ဈေးနှုန်း: ${formatted} Ks) ဝယ်ယူလိုပါသည်။`);
                 return `
                     <a href="https://t.me/KIFYCASS?text=${tgMsg}" target="_blank" rel="noopener noreferrer"
                         class="rounded-xl bg-darkbg hover:bg-amber-500/10 border border-darkborder hover:border-amber-500/50 px-3 py-2.5 flex items-center justify-between gap-2 transition-all">
@@ -1474,7 +1473,7 @@
                 const labelText = item.label || 'Telegram Premium';
                 const priceVal = Number(item.price || 0);
                 const formatted = priceVal.toLocaleString();
-                const tgMsg = encodeURIComponent(`မင်္ဂလာပါ KIFY GAME SHOP၊ Telegram Premium ${labelText} (ဈေးနှုန်း: ${formatted} Ks) ဝယ်ယူလိုပါသည်။`);
+                const tgMsg = encodeURIComponent(`မင်္ဂလာပါ @KIFYCASS၊ Telegram Premium ${labelText} (ဈေးနှုန်း: ${formatted} Ks) ဝယ်ယူလိုပါသည်။`);
                 return `
                     <a href="https://t.me/KIFYCASS?text=${tgMsg}" target="_blank" rel="noopener noreferrer"
                         class="group rounded-2xl bg-darkcard border border-amber-500/40 hover:border-amber-400 p-4 flex items-center gap-3 shadow-lg transition-all">
@@ -1493,7 +1492,7 @@
                 const amtText = st.amount || 'Star';
                 const priceVal = Number(st.price || 0);
                 const formatted = priceVal.toLocaleString();
-                const tgMsg = encodeURIComponent(`မင်္ဂလာပါ KIFY GAME SHOP၊ Telegram Star ${amtText} (ဈေးနှုန်း: ${formatted} Ks) ဝယ်ယူလိုပါသည်။`);
+                const tgMsg = encodeURIComponent(`မင်္ဂလာပါ @KIFYCASS၊ Telegram Star ${amtText} (ဈေးနှုန်း: ${formatted} Ks) ဝယ်ယူလိုပါသည်။`);
                 return `
                     <a href="https://t.me/KIFYCASS?text=${tgMsg}" target="_blank" rel="noopener noreferrer"
                         class="rounded-xl bg-darkbg hover:bg-amber-500/10 border border-darkborder hover:border-amber-500/50 px-3 py-2.5 flex items-center justify-between gap-2 transition-all">
@@ -2081,7 +2080,7 @@
             const formattedPrice = Number(acc.price).toLocaleString();
             const telegramUser = cleanTelegramUsername(acc.telegram);
             
-            const tgMessage = encodeURIComponent(`မင်္ဂလာပါ KIFY GAME SHOP၊ Account [${acc.title}] (${rankLabel}၊ ဈေးနှုန်း: ${formattedPrice} MMK) ကို ဝယ်ယူလိုပါသည်။`);
+            const tgMessage = encodeURIComponent(`မင်္ဂလာပါ @KIFYCASS၊ Account [${acc.title}] (${rankLabel}၊ ဈေးနှုန်း: ${formattedPrice} MMK) ကို ဝယ်ယူလိုပါသည်။`);
             const tgLink = `https://t.me/${telegramUser}?text=${tgMessage}`;
 
             const modalBody = document.getElementById('accountModalBody');
